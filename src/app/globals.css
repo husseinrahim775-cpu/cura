@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   🎨 منظومة الثيمات المتقدمة لنظام CURA الطليعي - النمط النهاري الطبي (Day Mode Light Theme)
+   ========================================================================== */
+
+:root, [data-theme="light"], [data-theme="midnight"], [data-theme="royal"] {
+  /* خلفية السايدبار والشريط الجانبي الأبيض الناعم للمستشفيات والعيادات */
+  --bg-sidebar: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%); 
+  
+  /* خلفية المحتوى الرئيسي - أبيض ثلجي مريح جداً لنظر الطبيب للعمل الطويل */
+  --bg-main: #F8FAFC; 
+  
+  /* الأزرق الطبي الهاديء الوقور المعزز للثقة (Cura Medical Primary Cyan Sky) */
+  --accent: #0284C7; 
+  --accent-hover: #0369A1; 
+
+  /* ألوان النصوص والرموز عالية التباين للقراءة السريعة */
+  --text-sidebar: #475569; /* رمادي داكن واضح للروابط */
+  --text-active: #0F172A; /* كحلي نايت غامق جداً للتأكيد والعناصر النشطة */
+
+  /* ألوان البطاقات والحاويات الحديثة */
+  --card-bg: #FFFFFF;
+  --card-border: #E2E8F0;
+  --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
+}
+
+/* 💡 الربط المباشر مع Tailwind v4 */
+@theme {
+  --color-brand: var(--accent);
+  --color-brand-hover: var(--accent-hover);
+  --color-main-bg: var(--bg-main);
+  --color-sidebar-text: var(--text-sidebar);
+  --color-sidebar-active: var(--text-active);
+}
+
+/* ==========================================================================
+   🏛️ أنماط البطاقات الحديثة والكونترولات النهارية (.modern-card & Light Controls)
+   ========================================================================== */
+
+/* البطاقات الحديثة الفاخرة للعيادة */
+.modern-card {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  box-shadow: var(--card-shadow) !important;
+  border-radius: 16px !important;
+  color: #0F172A !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.modern-card:hover {
+  border-color: #CBD5E1 !important;
+  box-shadow: 0 20px 30px -10px rgba(2, 132, 199, 0.08), 0 10px 15px -5px rgba(15, 23, 42, 0.03) !important;
+  transform: translateY(-2px);
+}
+
+/* القوائم المنسدلة والحقول النهارية عالية التباين */
+.custom-select-dark, 
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="number"], 
+input[type="date"], 
+select, 
+textarea {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1px solid #CBD5E1 !important;
+  border-radius: 10px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.custom-select-dark:focus, 
+input:focus, 
+select:focus, 
+textarea:focus {
+  border-color: #0284C7 !important;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15) !important;
+  outline: none !important;
+}
+
+::placeholder {
+  color: #94A3B8 !important;
+  opacity: 1 !important;
+}
+
+/* جداول البيانات النهارية */
+table {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+thead th {
+  background-color: #F1F5F9 !important;
+  color: #334155 !important;
+  border-bottom: 2px solid #E2E8F0 !important;
+  font-weight: 700 !important;
+}
+
+tbody tr {
+  border-bottom: 1px solid #F1F5F9 !important;
+  transition: background-color 0.15s ease !important;
+}
+
+tbody tr:hover {
+  background-color: #F8FAFC !important;
+}
+
+/* ==========================================================================
+   📊 الرسوم البيانية المتجهة SVG والـ Charts
+   ========================================================================== */
+
+svg line.grid-line, svg path.grid-line {
+  stroke: #E2E8F0 !important;
+  stroke-dasharray: 4 4;
+}
+
+/* تدرجات ألوان المبيعات والأرباح والمصاريف الطبية للنظام النهاري */
+.salesGrad-start { stop-color: #0284C7 !important; stop-opacity: 0.25 !important; }
+.salesGrad-stop { stop-color: #0284C7 !important; stop-opacity: 0.0 !important; }
+
+.netGrad-start { stop-color: #10B981 !important; stop-opacity: 0.25 !important; }
+.netGrad-stop { stop-color: #10B981 !important; stop-opacity: 0.0 !important; }
+
+.expGrad-start { stop-color: #EF4444 !important; stop-opacity: 0.25 !important; }
+.expGrad-stop { stop-color: #EF4444 !important; stop-opacity: 0.0 !important; }
+
+/* بطاقات التلميحات المنسدلة على المخططات البيانية Tooltips */
+.chart-tooltip {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  color: #0F172A !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 12px !important;
+}
+
+/* ==========================================================================
+   📱 تحسينات التجاوب الشامل للهواتف والأجهزة اللوحية دون تغيير النظام
+   ========================================================================== */
+
+html, body {
+  max-width: 100vw;
+  overflow-x: clip; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.table-scroll-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto !important; 
+  -webkit-overflow-scrolling: touch; 
+  display: block;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: #0F172A;
+  transition: background-color 0.3s ease, color 0.3s ease; 
+  font-size: clamp(14px, 1.2vw, 16px); 
+}
+
+div, table, section {
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  input, select, textarea, button {
+    font-size: 14px !important; 
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* إخفاء شريط التمرير المزعج عبر المتصفحات مع الاحتفاظ بوظيفة التمرير */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
