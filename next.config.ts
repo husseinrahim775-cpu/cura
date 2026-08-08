@@ -5,8 +5,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: '.', // نقطة واحدة فقط أو صيغة نسبية
+  //assetPrefix: '.', // نقطة واحدة فقط أو صيغة نسبية
   trailingSlash: true,
 };
 
-//export default nextConfig;
+export default nextConfig;
